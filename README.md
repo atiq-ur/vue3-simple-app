@@ -7,12 +7,12 @@
 
 **Post List**
 
-![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/1.jpg?raw=true)
+![Post List](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/1.png?raw=true)
 
 **Create Post**
 
-![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/2.jpg?raw=true)
+![Create Post](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/2.png?raw=true)
 
 **Update Post**
 
-![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/3.jpg?raw=true)
+![Update Post](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/3.png?raw=true)
