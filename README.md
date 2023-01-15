@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# Simple Vue3 APP
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+1. CRUD operation without state management (without vuex)
+2. Complete operation using state management (with vuex)
 
-## Recommended IDE Setup
+---
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**Post List**
+
+![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/1.jpg?raw=true)
+
+**Create Post**
+
+![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/2.jpg?raw=true)
+
+**Update Post**
+
+![alt text](https://github.com/atiq-ur/vue3-simple-app/blob/master/screenshots/3.jpg?raw=true)
