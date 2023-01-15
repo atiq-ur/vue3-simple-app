@@ -1,7 +1,7 @@
 # Simple Vue3 APP
 
-1. CRUD operation without state management (without vuex)
-2. Complete operation using state management (with vuex)
+1. CRUD operation without state management tool (without vuex)
+2. Complete operation using state management tool (with vuex)
 
 ---
 
