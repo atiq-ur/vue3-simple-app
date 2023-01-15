@@ -7,30 +7,24 @@
       v-for="post of posts"
       :key="post.id"
       :post="post"
-      @delete="onDelete"
     />
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
+import { useStore } from "vuex";
 import PostItem from "../components/PostItem.vue";
 
-const posts = ref([]);
+const store = useStore();
 
-onMounted(() => {
-  fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((res) => res.json())
-    .then((data) => {
-      posts.value = data;
-    });
-});
+const posts = computed(() => store.state.posts);
 
-const onDelete = (post) => {
-  //   const index = posts.value.findIndex((p) => p.id === post.id);
-  //   posts.value.splice(index, 1);
+// const onDelete = (post) => {
+//   //   const index = posts.value.findIndex((p) => p.id === post.id);
+//   //   posts.value.splice(index, 1);
 
-  // we can it like this too
-  posts.value = posts.value.filter((p) => p.id !== post.id);
-};
+//   // we can it like this too
+//   posts.value = posts.value.filter((p) => p.id !== post.id);
+// };
 </script>

@@ -42,10 +42,13 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 const route = useRoute();
 
 const router = useRouter();
+
+const store = useStore();
 
 const model = ref({
   id: "",
@@ -53,32 +56,18 @@ const model = ref({
   body: "",
 });
 
-onMounted(() => {
+onMounted(async () => {
   if (route.params.id) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${route.params.id}`)
-      .then((res) => res.json())
-      .then((post) => {
-        model.value = post;
-      });
+    const post = await store.dispatch("getSinglePost", route.params.id);
+    model.value = post;
+  } else {
+    return;
   }
 });
 
 const onSubmit = () => {
-  const method = model.value.id ? "PUT" : "POST";
-  const url = model.value.id
-    ? `https://jsonplaceholder.typicode.com/posts/${model.value.id}`
-    : "https://jsonplaceholder.typicode.com/posts";
-
-  fetch(url, {
-    method,
-    body: JSON.stringify(model.value),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((res) => res.json())
-    .then((post) => {
-      router.push("/");
-    });
+  store.dispatch("savePost", model.value).then(() => {
+    router.push("/");
+  });
 };
 </script>

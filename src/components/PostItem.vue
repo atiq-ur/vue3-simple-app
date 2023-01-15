@@ -16,7 +16,11 @@
 </template>
 
 <script setup>
-const emit = defineEmits(["delete"]);
+import { useStore } from "vuex";
+
+
+const store = useStore();
+
 const defineProps = defineProps({
   post: {
     type: Object,
@@ -27,12 +31,6 @@ const defineProps = defineProps({
 const onDeleteClick = (post) => {
   if (!window.confirm("Are you sure you want to delete post?")) return;
 
-  fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, {
-    method: "DELETE",
-  }).then((res) => {
-    if (res.status === 200) {
-      emit("delete", post);
-    }
-  });
+  store.dispatch("deletePost", post.id);
 };
 </script>
